@@ -29,8 +29,12 @@ namespace StudentManagement
             {
                 MessageBox.Show(ex.Message);
             }
+            Teacher teacher = new Teacher("Jack", "re", new DateTime(), true);
+            Class @class = new Class("CNTT K22", teacher, faculties[0]);
+            Student student = new Student("Test", new DateTime(), "SV57348", @class);
+            @class.Students.Add(student);
+            faculties[0].ClassList.Add(@class);
             DisPlayTreeView();
-
         }
         private void DisPlayTreeView()
         {
